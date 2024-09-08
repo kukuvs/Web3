@@ -1,0 +1,317 @@
+[
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "requests_mock",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests_mock",
+        "description": "requests_mock",
+        "detail": "requests_mock",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Crypto",
+        "importPath": "Crypto",
+        "description": "Crypto",
+        "isExtraImport": true,
+        "detail": "Crypto",
+        "documentation": {}
+    },
+    {
+        "label": "Fernet",
+        "importPath": "cryptography.fernet",
+        "description": "cryptography.fernet",
+        "isExtraImport": true,
+        "detail": "cryptography.fernet",
+        "documentation": {}
+    },
+    {
+        "label": "Fernet",
+        "importPath": "cryptography.fernet",
+        "description": "cryptography.fernet",
+        "isExtraImport": true,
+        "detail": "cryptography.fernet",
+        "documentation": {}
+    },
+    {
+        "label": "Fernet",
+        "importPath": "cryptography.fernet",
+        "description": "cryptography.fernet",
+        "isExtraImport": true,
+        "detail": "cryptography.fernet",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Main",
+        "importPath": "src.Main",
+        "description": "src.Main",
+        "isExtraImport": true,
+        "detail": "src.Main",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 2,
+        "importPath": "client.tests.test_client",
+        "description": "client.tests.test_client",
+        "peekOfCode": "def client():\n    \"\"\"\n    Фикстура для создания клиента.\n    \"\"\"\n    return Client()  # Создаём экземпляр клиента\ndef test_client_get_data(client):\n    \"\"\"\n    Тест на проверку получения данных через клиента.\n    \"\"\"\n    with requests_mock.Mocker() as m:",
+        "detail": "client.tests.test_client",
+        "documentation": {}
+    },
+    {
+        "label": "test_client_get_data",
+        "kind": 2,
+        "importPath": "client.tests.test_client",
+        "description": "client.tests.test_client",
+        "peekOfCode": "def test_client_get_data(client):\n    \"\"\"\n    Тест на проверку получения данных через клиента.\n    \"\"\"\n    with requests_mock.Mocker() as m:\n        # Мокируем ответ сервера на запрос\n        m.get('http://localhost:5000/data', json={'data': 'Тестовые данные'})\n        # Вызываем метод клиента для получения данных\n        data = client.get_data()\n        # Проверяем, что клиент получил данные правильно",
+        "detail": "client.tests.test_client",
+        "documentation": {}
+    },
+    {
+        "label": "test_client_post_data",
+        "kind": 2,
+        "importPath": "client.tests.test_client",
+        "description": "client.tests.test_client",
+        "peekOfCode": "def test_client_post_data(client):\n    \"\"\"\n    Тест на проверку отправки данных через клиента.\n    \"\"\"\n    with requests_mock.Mocker() as m:\n        # Мокируем ответ сервера на POST запрос\n        m.post('http://localhost:5000/data', json={'status': 'success'})\n        # Вызываем метод клиента для отправки данных\n        status = client.post_data('Тестовые данные')\n        # Проверяем, что сервер вернул успех",
+        "detail": "client.tests.test_client",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "kind": 6,
+        "importPath": "client.Сlient",
+        "description": "client.Сlient",
+        "peekOfCode": "class Client:\n    def __init__(self, server_url):\n        self.server_url = server_url\n    def encrypt_data(self, data, key):\n        response = requests.post(f\"{self.server_url}/encrypt\", json={'data': data, 'key': key})\n        return response.json()\n    def decrypt_data(self, encrypted_data, key):\n        response = requests.post(f\"{self.server_url}/decrypt\", json={'encrypted_data': encrypted_data, 'key': key})\n        return response.json()\nif __name__ == \"__main__\":",
+        "detail": "client.Сlient",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 2,
+        "importPath": "server.tests.test_server",
+        "description": "server.tests.test_server",
+        "peekOfCode": "def app():\n    \"\"\"Фикстура для создания Flask приложения для тестов.\"\"\"\n    app = create_app()\n    app.config['TESTING'] = True\n    return app\n@pytest.fixture\ndef client(app):\n    \"\"\"Фикстура для создания тестового клиента.\"\"\"\n    return app.test_client()\ndef test_server_status(client):",
+        "detail": "server.tests.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 2,
+        "importPath": "server.tests.test_server",
+        "description": "server.tests.test_server",
+        "peekOfCode": "def client(app):\n    \"\"\"Фикстура для создания тестового клиента.\"\"\"\n    return app.test_client()\ndef test_server_status(client):\n    \"\"\"Тест на проверку статуса сервера.\"\"\"\n    response = client.get('/')\n    assert response.status_code == 404  # Убедимся, что маршрут '/' не существует\ndef test_encrypt(client):\n    \"\"\"Тест на проверку маршрута шифрования.\"\"\"\n    data = {'data': 'Тестовые данные', 'key': 'секретный_ключ'}",
+        "detail": "server.tests.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "test_server_status",
+        "kind": 2,
+        "importPath": "server.tests.test_server",
+        "description": "server.tests.test_server",
+        "peekOfCode": "def test_server_status(client):\n    \"\"\"Тест на проверку статуса сервера.\"\"\"\n    response = client.get('/')\n    assert response.status_code == 404  # Убедимся, что маршрут '/' не существует\ndef test_encrypt(client):\n    \"\"\"Тест на проверку маршрута шифрования.\"\"\"\n    data = {'data': 'Тестовые данные', 'key': 'секретный_ключ'}\n    response = client.post('/encrypt', json=data)\n    assert response.status_code == 200\n    assert 'encrypted_data' in response.json",
+        "detail": "server.tests.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "test_encrypt",
+        "kind": 2,
+        "importPath": "server.tests.test_server",
+        "description": "server.tests.test_server",
+        "peekOfCode": "def test_encrypt(client):\n    \"\"\"Тест на проверку маршрута шифрования.\"\"\"\n    data = {'data': 'Тестовые данные', 'key': 'секретный_ключ'}\n    response = client.post('/encrypt', json=data)\n    assert response.status_code == 200\n    assert 'encrypted_data' in response.json\ndef test_decrypt(client):\n    \"\"\"Тест на проверку маршрута дешифрования.\"\"\"\n    encrypted_data = {'encrypted_data': '...', 'key': 'секретный_ключ'}  # Заменить зашифрованные данные на валидные\n    response = client.post('/decrypt', json=encrypted_data)",
+        "detail": "server.tests.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "test_decrypt",
+        "kind": 2,
+        "importPath": "server.tests.test_server",
+        "description": "server.tests.test_server",
+        "peekOfCode": "def test_decrypt(client):\n    \"\"\"Тест на проверку маршрута дешифрования.\"\"\"\n    encrypted_data = {'encrypted_data': '...', 'key': 'секретный_ключ'}  # Заменить зашифрованные данные на валидные\n    response = client.post('/decrypt', json=encrypted_data)\n    assert response.status_code == 200\n    assert 'decrypted_data' in response.json",
+        "detail": "server.tests.test_server",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "kind": 2,
+        "importPath": "server.server",
+        "description": "server.server",
+        "peekOfCode": "def create_app():\n    app = Flask(__name__)\n    crypto = Crypto()\n    @app.route('/encrypt', methods=['POST'])\n    def encrypt_data():\n        try:\n            data = request.json.get('data')\n            key = request.json.get('key')\n            crypto.set_key(key)\n            encrypted_data = crypto.incrypt(data)",
+        "detail": "server.server",
+        "documentation": {}
+    },
+    {
+        "label": "crypto",
+        "kind": 2,
+        "importPath": "src.tests.test_crypto",
+        "description": "src.tests.test_crypto",
+        "peekOfCode": "def crypto():\n    \"\"\"\n    Фикстура для инициализации объекта Crypto перед каждым тестом.\n    \"\"\"\n    return Crypto()\ndef test_encryption_and_decryption(crypto):\n    \"\"\"\n    Тест на шифрование и дешифровку данных.\n    \"\"\"\n    key = Fernet.generate_key().decode('utf-8')",
+        "detail": "src.tests.test_crypto",
+        "documentation": {}
+    },
+    {
+        "label": "test_encryption_and_decryption",
+        "kind": 2,
+        "importPath": "src.tests.test_crypto",
+        "description": "src.tests.test_crypto",
+        "peekOfCode": "def test_encryption_and_decryption(crypto):\n    \"\"\"\n    Тест на шифрование и дешифровку данных.\n    \"\"\"\n    key = Fernet.generate_key().decode('utf-8')\n    crypto.set_key(key)\n    data = \"Тестовые данные\"\n    encrypted_data = crypto.incrypt(data)\n    assert encrypted_data is not None, \"Шифрование не удалось\"\n    decrypted_data = crypto.decrypt(encrypted_data)",
+        "detail": "src.tests.test_crypto",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.tests.test_main",
+        "description": "src.tests.test_main",
+        "peekOfCode": "def main():\n    \"\"\"\n    Фикстура для инициализации объекта Main перед каждым тестом.\n    \"\"\"\n    return Main()\n# Генерация корректного base64 ключа для шифрования\nvalid_key = Fernet.generate_key()\n@patch('src.Main.Main.get_key_from_usb', return_value=valid_key.decode('utf-8'))  # Используем корректный base64 ключ\ndef test_process_data(mock_get_key_from_usb, main):\n    \"\"\"",
+        "detail": "src.tests.test_main",
+        "documentation": {}
+    },
+    {
+        "label": "test_process_data",
+        "kind": 2,
+        "importPath": "src.tests.test_main",
+        "description": "src.tests.test_main",
+        "peekOfCode": "def test_process_data(mock_get_key_from_usb, main):\n    \"\"\"\n    Тест на обработку данных с корректным ключом.\n    \"\"\"\n    json_data = '{\"value\": \"Тестовые данные\"}'\n    processed_data = main.process_data(json_data)\n    assert processed_data == \"Тестовые данные\", \"Обработанные данные не совпадают с исходными\"",
+        "detail": "src.tests.test_main",
+        "documentation": {}
+    },
+    {
+        "label": "valid_key",
+        "kind": 5,
+        "importPath": "src.tests.test_main",
+        "description": "src.tests.test_main",
+        "peekOfCode": "valid_key = Fernet.generate_key()\n@patch('src.Main.Main.get_key_from_usb', return_value=valid_key.decode('utf-8'))  # Используем корректный base64 ключ\ndef test_process_data(mock_get_key_from_usb, main):\n    \"\"\"\n    Тест на обработку данных с корректным ключом.\n    \"\"\"\n    json_data = '{\"value\": \"Тестовые данные\"}'\n    processed_data = main.process_data(json_data)\n    assert processed_data == \"Тестовые данные\", \"Обработанные данные не совпадают с исходными\"",
+        "detail": "src.tests.test_main",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 2,
+        "importPath": "src.tests.test_parser",
+        "description": "src.tests.test_parser",
+        "peekOfCode": "def parser():\n    \"\"\"\n    Фикстура для инициализации объекта Parser перед каждым тестом.\n    \"\"\"\n    return Parser()\ndef test_parse_valid_json(parser):\n    \"\"\"\n    Тест на успешный парсинг корректного JSON.\n    \"\"\"\n    json_data = '{\"value\": \"Тестовые данные\"}'",
+        "detail": "src.tests.test_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_valid_json",
+        "kind": 2,
+        "importPath": "src.tests.test_parser",
+        "description": "src.tests.test_parser",
+        "peekOfCode": "def test_parse_valid_json(parser):\n    \"\"\"\n    Тест на успешный парсинг корректного JSON.\n    \"\"\"\n    json_data = '{\"value\": \"Тестовые данные\"}'\n    parsed_value = parser.parse(json_data)\n    assert parsed_value == \"Тестовые данные\", \"Парсинг вернул неверное значение\"\ndef test_parse_invalid_json(parser):\n    \"\"\"\n    Тест на обработку некорректного JSON.",
+        "detail": "src.tests.test_parser",
+        "documentation": {}
+    },
+    {
+        "label": "test_parse_invalid_json",
+        "kind": 2,
+        "importPath": "src.tests.test_parser",
+        "description": "src.tests.test_parser",
+        "peekOfCode": "def test_parse_invalid_json(parser):\n    \"\"\"\n    Тест на обработку некорректного JSON.\n    \"\"\"\n    with pytest.raises(ValueError):\n        parser.parse('некорректные данные')",
+        "detail": "src.tests.test_parser",
+        "documentation": {}
+    },
+    {
+        "label": "Crypto",
+        "kind": 6,
+        "importPath": "src.Crypto",
+        "description": "src.Crypto",
+        "peekOfCode": "class Crypto:\n    \"\"\"\n    Класс Crypto для шифрования и дешифровки данных с использованием Fernet.\n    \"\"\"\n    def __init__(self):\n        self.key = None\n        self.Value = None\n        self.encryptedValue = None\n    def set_key(self, key):\n        \"\"\"",
+        "detail": "src.Crypto",
+        "documentation": {}
+    },
+    {
+        "label": "Main",
+        "kind": 6,
+        "importPath": "src.Main",
+        "description": "src.Main",
+        "peekOfCode": "class Main:\n    \"\"\"\n    Главный класс для обработки данных и взаимодействия с флеш-накопителем.\n    \"\"\"\n    def __init__(self):\n        self.crypto = Crypto()\n        self.parser = Parser()\n    def check_usb_key(self):\n        \"\"\"\n        Проверяет наличие флеш-накопителя с ключом.",
+        "detail": "src.Main",
+        "documentation": {}
+    },
+    {
+        "label": "Parser",
+        "kind": 6,
+        "importPath": "src.Parser",
+        "description": "src.Parser",
+        "peekOfCode": "class Parser:\n    \"\"\"\n    Класс для парсинга и валидации JSON данных.\n    \"\"\"\n    def __init__(self):\n        self.data = None\n        self.Value = None\n    def parse(self, json_data):\n        \"\"\"\n        Парсит JSON и возвращает значение по ключу 'value'.",
+        "detail": "src.Parser",
+        "documentation": {}
+    }
+]
