@@ -1,5 +1,5 @@
 import pytest
-from ..server import create_app  # Корректируем импорт
+from .server import create_app  
 
 @pytest.fixture
 def app():
